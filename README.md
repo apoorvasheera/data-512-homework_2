@@ -13,14 +13,14 @@ This project utilizes the following datasets:
 - **Wikipedia Politician Articles:** A dataset containing Wikipedia articles about politicians, obtained from a category crawl of Wikipedia's "Politicians by nationality" pages.
 - **Population Data:** The population data was sourced from the Population Reference Bureau's August 2024 data sheet, providing population counts by country and region.
 
-### License and Terms of Use
-
-The source data is publicly available under the Wikimedia Foundation’s Terms of Use. This dataset is subject to these terms, including those governing the reuse and redistribution of Wikimedia content. The ORES (Objective Revision Evaluation Service) API used to assess article quality is provided by Wikimedia under a Creative Commons license, and detailed documentation can be found here. Please review these terms before using or redistributing this dataset. In this analysis, we adhere to the terms of the Wikimedia Foundation, particularly ensuring proper attribution for the data and following ethical guidelines in using the ORES API for article quality predictions.
-
 ### API Documentation
 
 - **MediaWiki REST API for the EN Wikipedia:** Used to get revision ids to lead to ORES request. Full documentation : (https://www.mediawiki.org/wiki/API:Main_page)
 - **ORES API:** Used to retrieve quality predictions for Wikipedia articles. Full documentation can be found here: (https://ores.wikimedia.org)
+
+### API License and Terms of Use
+
+The source data is publicly available under the Wikimedia Foundation’s Terms of Use. This dataset is subject to these terms, including those governing the reuse and redistribution of Wikimedia content. The ORES (Objective Revision Evaluation Service) API used to assess article quality is provided by Wikimedia under a Creative Commons license, and detailed documentation can be found here. Please review these terms before using or redistributing this dataset. In this analysis, we adhere to the terms of the Wikimedia Foundation, particularly ensuring proper attribution for the data and following ethical guidelines in using the ORES API for article quality predictions.
 
 ## Data Files
 
@@ -62,6 +62,24 @@ The source data is publicly available under the Wikimedia Foundation’s Terms o
 
 ## Research Implications
 
+1. What biases did you expect to find in the data (before you started working with it), and why?
+
+Before analyzing the English Wikipedia data, I expected to find an overrepresentation of developed, English-speaking nations like the United States and the United Kingdom, with higher quality articles in these regions due to more active contributors. In contrast, I anticipated underrepresentation of countries with less internet access or lower English proficiency, particularly in parts of Africa, Asia, and South America. Smaller or less globally prominent countries were likely to have fewer articles, reflecting biases in contributor focus. Additionally, I expected gaps in coverage for marginalized communities or regions with less international media exposure, leading to incomplete or skewed representations.
+
+2. What (potential) sources of bias did you discover in the course of your data processing and analysis?
+
+I discovered that my raw dataset was missing a significant number of countries (e.g., Canada, United States, United Kingdom, China (Hong Kong SAR), Denmark, etc.), which are highly influential in terms of both population and Wikipedia contribution. 
+The dataset also showed that certain regions, such as Oceania and Northern Europe, had significantly higher articles per capita and high-quality articles compared to other regions like South Asia or East Asia. This bias suggests that Wikipedia content is heavily influenced by contributors from developed regions, leading to an overrepresentation of topics and perspectives from these areas while underrepresenting others.
+Smaller nations like Antigua and Barbuda, Federated States of Micronesia, and Tonga were shown to have a disproportionately high number of articles per capita. This creates an imbalance in representation when compared to much larger countries, which could be underrepresented in terms of articles per capita. 
+
+3. Can you think of a realistic data science research situation where using these data (to train a model, perform a hypothesis-driven research, or make business decisions) might create biased or misleading results, due to the inherent gaps and limitations of the data?
+ 
+A realistic data science research situation where using English Wikipedia data could create biased or misleading results is in training a natural language processing (NLP) model for global knowledge representation. If the model is trained primarily on this dataset, it would disproportionately reflect the perspectives, priorities, and knowledge of developed countries, while underrepresenting information from less connected, or marginalized regions. For example, using such a model to generate insights for global markets might lead to biased conclusions, overlooking cultural nuances, regional trends, and local knowledge from underrepresented areas, thus resulting in flawed business decisions or biased research outcomes. Similarly, any hypothesis-driven research relying on this data to analyze global knowledge trends or diversity might draw misleading conclusions due to the inherent gaps in representation across different countries and communities.
+
+4. How might a researcher supplement or transform this dataset to potentially correct for the limitations/biases you observed?
+5. 
+A researcher could incorporate non-English Wikipedia data - By including Wikipedia articles from non-English language versions (such as Spanish, French, Mandarin, etc.), the dataset would capture perspectives and knowledge from regions where English is not the primary language. This would help balance the overrepresentation of developed, English-speaking nations.
+They could also leverage other data sources - Supplementing Wikipedia data with information from more regionally-focused or domain-specific sources (such as local news outlets, academic databases, government publications, or indigenous knowledge repositories) would fill in gaps left by Wikipedia's contributor base. This could help capture underrepresented regions and topics.
 
 ## License
 
